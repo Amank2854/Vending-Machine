@@ -2,7 +2,7 @@ module Item_One(nickel_in, dime_in, clock, reset, nickel_out, dispense);
     input nickel_in, dime_in, clock, reset;
     output reg nickel_out, dispense;
     
-    reg [6:0] current_state, next_state;
+    reg [4:0] current_state, next_state;
     localparam  S0  = 7'b00001;
                 S5  = 7'b00010;
                 S10 = 7'b00100;
