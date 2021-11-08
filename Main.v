@@ -69,7 +69,43 @@ module Item_Three(nickel_in, dime_in, clock, reset, nickel_out, dispense);
         end
     end
 
-    //states and their realtionship to be defined here
+    always @(nickel_in or dime_in) begin
+        case(current_state)
+            S0: 
+                if(nickel_in)      begin next_state = S5;  {nickel_out, dispense} = 2'b00; end
+                else if(dime_in)   begin next_state = S10; {nickel_out, dispense} = 2'b00; end
+                else               begin next_state = S0;  {nickel_out, dispense} = 2'b00; end
+            
+            S5: 
+                if(nickel_in)      begin next_state = S10; {nickel_out, dispense} = 2'b00; end
+                else if(dime_in)   begin next_state = S15; {nickel_out, dispense} = 2'b00; end
+                else               begin next_state = S5;  {nickel_out, dispense} = 2'b00; end
+            
+            S10:
+                if(nickel_in)      begin next_state = S15; {nickel_out, dispense} = 2'b00; end
+                else if(dime_in)   begin next_state = S20; {nickel_out, dispense} = 2'b00; end
+                else               begin next_state = S10; {nickel_out, dispense} = 2'b00; end
+            
+            S15:
+                if(nickel_in)      begin next_state = S20; {nickel_out, dispense} = 2'b00; end
+                else if(dime_in)   begin next_state = S25; {nickel_out, dispense} = 2'b01; end
+                else               begin next_state = S15; {nickel_out, dispense} = 2'b00; end
+            
+            S20:
+                if(nickel_in)      begin next_state = S25; {nickel_out, dispense} = 2'b01; end
+                else if(dime_in)   begin next_state = S30; {nickel_out, dispense} = 2'b11; end
+                else               begin next_state = S20; {nickel_out, dispense} = 2'b00; end
+            
+            S25:
+                next_state = S0;
+            
+            S30:
+                next_state = S0;
+
+            default:
+                begin next_state = S0; {nickel_out, dispense} = 2'b00; end
+            
+            endcase
+    end
 
 endmodule
-    
