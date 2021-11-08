@@ -5,4 +5,4 @@ The relationship among the states needs to be defined. The testbench is to be up
 (8.11.2021) The code for the module named 'Item_Three' is completed in the source code.\
 (8.11.2021) The code for the module named 'Item_Two' is completed in the source code.\
 (8.11.2021) The code for the module named 'Item_One' is completed in the source code.\
-The testbench is to be created and uploaded. Debugging to be done.\
+The testbench is to be created and uploaded. Debugging to be done.
