@@ -80,4 +80,4 @@ money if there is any. After each dispense, the device resets and is ready to be
 
 ## Future Modifications
 We can further add a termination button to the machine. This button would allow the user
-to terminate the purchase process and receive all the money back sequentially
+to terminate the purchase process and receive all the money back sequentially.
